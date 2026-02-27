@@ -1,0 +1,96 @@
+---
+const companies = [
+  {
+    name: 'OTS Chile',
+    category: 'Última milla',
+    description: 'La empresa de entregas de última milla preferida por los vendedores de e-commerce en Santiago.',
+    cta: 'Visitanos',
+    span: 'md:col-span-2 lg:col-span-2',
+    image: 'https://maman.com.ar/wp-content/uploads/2023/03/ecommerce-logistica-tech-in-asia-fl_2.jpg',
+    href: '#',
+  },
+  {
+    name: 'Gamu Chile',
+    category: 'Retail',
+    description: 'Empresa especializada en la venta de insumos para la vida diaria',
+    cta: 'Conocenos',
+    span: '',
+    image: 'https://otschile.cl/_next/image?url=%2Fbodega.png&w=640&q=75',
+    href: '#',
+  },
+  {
+    name: 'Mundo Insumo',
+    category: 'Retail',
+    description: 'Lider en venta de vestimenta para todas las edades',
+    cta: 'Compra aquí',
+    span: '',
+    image: 'https://pmkideas.com/blog-ideas-regalos/wp-content/uploads/2023/12/poliesteroalgodon.png',
+    href: 'https://www.mundoinsumo.cl/',
+  },
+  {
+    name: 'BearTrack App',
+    category: 'Tecnología',
+    description: 'Herramienta integral para la gestión operativa de operadores logísticos',
+    cta: 'Visitanos',
+    span: '',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIjpBSCQdR8E3XEjYYyqZvBmhHa_ifBwcpL9bEEhOTvWOo4iKRW1O0aINwd_kcNDQF-xCG6TGz0WXtapFCgRq5p4N1suKxNBGx8UguuHgzfjo6OTdk1U_HhOmXyDfjfECZ55pAAe_mzSMhJuxTj0OVpeDgaQaNGT1BbgVAMIEFN36vLdsWTNoB_-oBlHlUjPGLoAA47_IjYJfL-KNu4O_N3Y8DglPFwDRGaBxI8fPCwA5-f9bt4rQB9qShJAzwGEUij8Y9_TGsrxU',
+    href: 'https://beartrackapp.com/',
+  },
+  {
+    name: 'Busca Tu Camiseta',
+    category: 'Retail',
+    description: 'Tienda de venta de ropa lider en el e-commerce de Colombia',
+    cta: 'Compra aquí',
+    span: 'md:col-span-2 lg:col-span-1',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVZ9-uBFAzmAmI-8_sgytW2Wku981MvQ0IG20oNFbSUeJfP39Z7vA2YN8aT3-uxgqop0q9Jl4der62nTKP0TPq7qDZ7kOgWbTJSGpyp0s7ODilkgV0IZ822KaiMa_xOp27HSweL_h4NZffHJm1ofsPoeaSgLZ0RTPJmUnd7_Rmcg4TW4YDry7Txrc2FDX72O2-e79kd17qh0sGnpBE5mRryrtrdl4ZbGMcI3bQ7g2Reib95AtMgSpOyurplI02EyYzLb0siFGN_UQ',
+    href: 'https://buscatucamiseta.com.co/',
+  },
+];
+---
+
+<section id="portfolio" class="w-full bg-slate-50 dark:bg-slate-900/50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12">
+
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">Nuestro portafolio de negocios</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-lg">Explora nuevos horizontes a través de nuestras distintas lineas de negocio.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+      {companies.map((company) => (
+        <a
+          href={company.href}
+          class={`portfolio-tile group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-800 ${company.span}`}
+        >
+          <!-- Background Image -->
+          <div
+            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+            style={`background-image: url('${company.image}');`}
+          ></div>
+
+          <!-- Overlay -->
+          <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-60 transition-opacity duration-300"></div>
+
+          <!-- Category badge -->
+          <div class="absolute top-6 left-6 z-10">
+            <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">
+              {company.category}
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="absolute bottom-6 left-6 right-6 z-10 text-white">
+            <h3 class="text-2xl font-bold mb-1">{company.name}</h3>
+            <div class="h-0 overflow-hidden group-hover:h-auto group-hover:mt-2 transition-all duration-300">
+              <p class="text-slate-200 text-sm mb-4 line-clamp-2">{company.description}</p>
+              <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-300 hover:text-white transition-colors">
+                {company.cta} <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    image: ghcr.io/emolina4clover/grupogamu-website:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: grupogamu-web
+    ports:
+      - "3002:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

@@ -1,0 +1,106 @@
+---
+---
+
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img
+          src="https://www.gamuchile.cl/wp-content/uploads/2024/02/PARA-FONDOS-OSCUROS-NEGROS-2-1024x643.png"
+          alt="Grupo Gamu"
+          class="h-8 w-auto dark:brightness-100 brightness-0"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <nav class="flex gap-6">
+          <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#about">Acerca de nosotros</a>
+          <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#portfolio">Portafolio</a>
+          <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contacto</a>
+        </nav>
+
+        <!-- Theme toggle desktop -->
+        <button
+          id="theme-toggle"
+          aria-label="Cambiar tema"
+          class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <span class="material-symbols-outlined" id="icon-light">light_mode</span>
+          <span class="material-symbols-outlined hidden" id="icon-dark">dark_mode</span>
+        </button>
+
+        <a href="#contact" class="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm">
+          Contáctanos
+        </a>
+      </div>
+
+      <!-- Mobile: theme toggle + hamburger -->
+      <div class="md:hidden flex items-center gap-1">
+        <button
+          id="theme-toggle-mobile"
+          aria-label="Cambiar tema"
+          class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <span class="material-symbols-outlined" id="icon-light-mobile">light_mode</span>
+          <span class="material-symbols-outlined hidden" id="icon-dark-mobile">dark_mode</span>
+        </button>
+        <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center text-slate-900 dark:text-white cursor-pointer" aria-label="Abrir menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+    <nav class="flex flex-col px-4 py-4 gap-4">
+      <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#about">Acerca de nosotros</a>
+      <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#portfolio">Portafolio</a>
+      <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contacto</a>
+      <a href="#contact" class="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm text-center">
+        Contáctanos
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Theme toggle logic
+  function applyTheme(dark: boolean) {
+    const root = document.documentElement;
+    if (dark) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    // Sync icons: show sun when dark (to switch to light), moon when light (to switch to dark)
+    const lightIcons = [document.getElementById('icon-light'), document.getElementById('icon-light-mobile')];
+    const darkIcons = [document.getElementById('icon-dark'), document.getElementById('icon-dark-mobile')];
+    lightIcons.forEach(el => el?.classList.toggle('hidden', dark));
+    darkIcons.forEach(el => el?.classList.toggle('hidden', !dark));
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const next = !isDark;
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+    applyTheme(next);
+  }
+
+  // Init icons on load
+  applyTheme(document.documentElement.classList.contains('dark'));
+
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+</script>
