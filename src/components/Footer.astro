@@ -1,30 +1,29 @@
 ---
 ---
 
-<footer id="contact" class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<footer id="contact" class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-12 sm:pt-16 pb-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
 
-      <!-- Brand Column -->
-      <div class="col-span-1 md:col-span-1 flex flex-col gap-4">
-        <div class="flex items-center gap-2 text-primary">
-          <div class="size-6">
-            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
-            </svg>
-          </div>
-          <h2 class="text-slate-900 dark:text-white text-lg font-bold">Grupo Gamu</h2>
+      <!-- Brand Column: full width on mobile -->
+      <div class="col-span-2 sm:col-span-2 md:col-span-1 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <img
+            src="https://www.gamuchile.cl/wp-content/uploads/2024/02/PARA-FONDOS-OSCUROS-NEGROS-2-1024x643.png"
+            alt="Grupo Gamu"
+            class="h-7 w-auto dark:brightness-100 brightness-0"
+          />
         </div>
-        <p class="text-slate-500 dark:text-slate-400 text-sm">
+        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs">
           Construyendo el futuro haciendo mejor tu presente.
         </p>
       </div>
 
       <!-- Company Column -->
       <div>
-        <h3 class="text-slate-900 dark:text-white font-bold mb-4">Company</h3>
-        <ul class="space-y-3">
+        <h3 class="text-slate-900 dark:text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">Empresa</h3>
+        <ul class="space-y-2 sm:space-y-3">
           <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Acerca de nosotros</a></li>
           <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Oportunidades</a></li>
           <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Comunicaciones</a></li>
@@ -33,23 +32,23 @@
 
       <!-- Resources Column -->
       <div>
-        <h3 class="text-slate-900 dark:text-white font-bold mb-4">Recursos</h3>
-        <ul class="space-y-3">
+        <h3 class="text-slate-900 dark:text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">Recursos</h3>
+        <ul class="space-y-2 sm:space-y-3">
           <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Blog</a></li>
           <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Newsletter</a></li>
-          <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Política de privacidad</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Privacidad</a></li>
         </ul>
       </div>
 
       <!-- Connect Column -->
       <div>
-        <h3 class="text-slate-900 dark:text-white font-bold mb-4">Contáctanos</h3>
-        <div class="flex gap-4">
-          <a class="text-slate-400 hover:text-primary transition-colors" href="#" aria-label="Website">
-            <span class="material-symbols-outlined">public</span>
+        <h3 class="text-slate-900 dark:text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">Contáctanos</h3>
+        <div class="flex gap-3">
+          <a class="text-slate-400 hover:text-primary transition-colors p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#" aria-label="Sitio web">
+            <span class="material-symbols-outlined text-[22px]">public</span>
           </a>
-          <a class="text-slate-400 hover:text-primary transition-colors" href="#" aria-label="Email">
-            <span class="material-symbols-outlined">mail</span>
+          <a class="text-slate-400 hover:text-primary transition-colors p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#" aria-label="Email">
+            <span class="material-symbols-outlined text-[22px]">mail</span>
           </a>
         </div>
       </div>
@@ -57,11 +56,13 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-slate-500 dark:text-slate-400 text-sm text-center md:text-left">© 2026 Grupo Gamu. Todos los derechos reservados.</p>
-      <div class="flex gap-6">
-        <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm" href="#">Privacy Policy</a>
-        <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm" href="#">Terms of Service</a>
+    <div class="border-t border-slate-200 dark:border-slate-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+      <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm text-center sm:text-left">
+        © 2026 Grupo Gamu. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-4 sm:gap-6">
+        <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-xs sm:text-sm" href="#">Política de privacidad</a>
+        <a class="text-slate-500 dark:text-slate-400 hover:text-primary text-xs sm:text-sm" href="#">Términos de uso</a>
       </div>
     </div>
 

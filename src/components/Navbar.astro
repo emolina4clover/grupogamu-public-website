@@ -76,6 +76,13 @@
     mobileMenu?.classList.toggle('hidden');
   });
 
+  // Close mobile menu when a nav link is clicked
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
   // Theme toggle logic
   function applyTheme(dark: boolean) {
     const root = document.documentElement;

@@ -10,4 +10,21 @@
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
+  /* prevent icon text from wrapping or being selectable */
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Smooth theme transition on all elements */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+/* But don't slow down transforms/opacity animations */
+.transition-transform,
+.transition-shadow,
+[class*="transition-"] {
+  transition-property: revert;
 }
